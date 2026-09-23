@@ -171,11 +171,12 @@
            TARANG 2026 & ROBUST MOBILE STYLES
            ========================================= */
         .tarang-hero-content {
+            display: flex; flex-direction: column; align-items: center;
             text-align: center; max-width: 900px; margin: 0 auto; width: 100%; padding: 0 10px; position: relative;
         }
 
-        /* ----- BACK BUTTON ----- */
-        .back-btn-container { position: absolute; top: 0; left: 10px; z-index: 10; }
+        /* ----- BACK BUTTON (FIXED TO AVOID OVERLAP) ----- */
+        .back-btn-container { align-self: flex-start; margin-bottom: 20px; z-index: 10; width: 100%; text-align: left; }
         .back-btn { 
             background: transparent; color: var(--accent-gold); border: 1px solid rgba(212, 175, 55, 0.5); 
             padding: 8px 20px; border-radius: 30px; font-family: 'Poppins', sans-serif; font-weight: 600; 
@@ -200,23 +201,23 @@
         }
         .whatsapp-btn:hover { background: #1ebe57; transform: translateY(-3px); box-shadow: 0 0 30px rgba(37, 211, 102, 0.6); color: #fff; }
 
-        /* ----- FORCE-HORIZONTAL GLOWING COUNTDOWN TIMER ----- */
+        /* ----- FORCE-HORIZONTAL BIG GLOWING COUNTDOWN TIMER ----- */
         .countdown-line {
             display: flex !important; flex-direction: row !important; justify-content: center !important; 
             align-items: baseline !important; flex-wrap: nowrap !important;
-            width: 100%; max-width: 100%; margin: 15px auto 25px auto; padding: 0;
-            gap: clamp(6px, 2vw, 20px); font-family: 'Montserrat', sans-serif; font-weight: 900;
-            color: #fff; text-shadow: 0 0 15px rgba(212,175,55,0.6); letter-spacing: 1px;
+            width: 100%; max-width: 100%; margin: 20px auto 30px auto; padding: 0;
+            gap: clamp(4px, 1.5vw, 15px); font-family: 'Montserrat', sans-serif; font-weight: 900;
+            color: #fff; text-shadow: 0 0 15px rgba(212,175,55,0.6); letter-spacing: 0px;
             white-space: nowrap !important; overflow: hidden; text-align: center;
         }
         .cd-unit { 
             display: inline-flex !important; flex-direction: row !important; align-items: baseline !important; 
-            gap: clamp(3px, 1vw, 8px); white-space: nowrap !important; 
+            gap: clamp(2px, 0.8vw, 6px); white-space: nowrap !important; 
         }
-        .cd-unit span:first-child { font-size: clamp(1rem, 3.8vw, 2.2rem); }
+        .cd-unit span:first-child { font-size: clamp(1.5rem, 6vw, 3rem); line-height: 1; }
         .cd-lbl { 
-            font-size: clamp(0.5rem, 1.5vw, 1rem); color: var(--accent-gold); 
-            text-transform: uppercase; font-weight: 700; text-shadow: none; letter-spacing: 0.5px;
+            font-size: clamp(0.55rem, 2.2vw, 1.1rem); color: var(--accent-gold); 
+            text-transform: uppercase; font-weight: 700; text-shadow: none; letter-spacing: 0px;
         }
 
         /* Admin Controls Bar */
@@ -368,18 +369,14 @@
             .img-back { width: 80%; height: 210px; }
             .img-front { width: 75%; height: 180px; }
 
-            .back-btn-container { top: 15px; left: 15px; }
+            .back-btn-container { margin-bottom: 15px; }
             .back-btn { padding: 6px 14px; font-size: 0.85rem; }
 
             /* Tarang Hero scaling */
-            #edit-t-title { font-size: clamp(2.3rem, 8.5vw, 3.5rem) !important; margin-top: 25px; }
+            #edit-t-title { font-size: clamp(2.3rem, 8.5vw, 3.5rem) !important; margin-top: 10px; }
             #edit-t-sub { font-size: 1.15rem !important; }
             #edit-t-date { font-size: 1rem !important; }
             #edit-t-desc { font-size: 0.95rem !important; line-height: 1.7; }
-
-            /* Forced overrides to guarantee single line timer */
-            .countdown-line { gap: 8px !important; }
-            .cd-lbl { font-size: 0.65rem !important; }
 
             /* Instrument boxes */
             .instrument-box { padding: 22px 14px; border-radius: 16px; margin-bottom: 25px; }
@@ -407,10 +404,6 @@
             .footer-buttons-wrapper { flex-direction: column; }
             .tarang-footer-admin { width: 100%; justify-content: center;}
             .pc-main-row { flex-direction: column; align-items: flex-start;}
-            
-            /* Extremely aggressive single line mobile fix */
-            .countdown-line { gap: 4px !important; }
-            .cd-lbl { font-size: 0.45rem !important; }
         }
     </style>
 </head>
@@ -739,7 +732,7 @@
                 </button>
             </div>
 
-            <p class="version-tag">v1.7.13</p>
+            <p class="version-tag">v1.7.14</p>
         </footer>
     </div>
 
@@ -1573,15 +1566,21 @@
                 doc.save("Tarang_2026_Participants.pdf"); return;
             }
 
-            const sortedData = [...tarangData].sort((a, b) => a.class.localeCompare(b.class));
+            // Custom sort: Guitar -> Keyboard -> BacXtage Managers, then by class, then name
+            const instrumentOrder = { "guitar": 1, "keyboard": 2, "bacxtage": 3 };
+            const sortedData = [...tarangData].sort((a, b) => {
+                if (instrumentOrder[a.instrument] !== instrumentOrder[b.instrument]) {
+                    return instrumentOrder[a.instrument] - instrumentOrder[b.instrument];
+                }
+                if (a.class !== b.class) {
+                    return a.class.localeCompare(b.class);
+                }
+                return a.name.localeCompare(b.name);
+            });
+
             const tableRows = sortedData.map(p => {
                 let instName = p.instrument === 'bacxtage' ? 'BacXtage Managers' : (p.instrument.charAt(0).toUpperCase() + p.instrument.slice(1));
-                let nameText = p.name;
-                if(p.badges) {
-                    if(p.badges.includes('crown')) nameText += " [Owner]";
-                    if(p.badges.includes('star')) nameText += " [Pro]";
-                }
-                return [nameText, p.class, instName];
+                return [p.name, p.class, instName];
             });
 
             doc.autoTable({
