@@ -808,7 +808,12 @@
         async function fetchGlobalData() {
             if (!GLOBAL_DATABASE_LINK || !GLOBAL_DATABASE_LINK.startsWith('https://')) return;
             try {
-                const response = await fetch(GLOBAL_DATABASE_LINK);
+                // 🔴 ADDED CACHE-BUSTING SO PHONES DON'T USE OLD DATA
+                const response = await fetch(GLOBAL_DATABASE_LINK + "?_t=" + Date.now(), {
+                    method: 'GET',
+                    headers: { 'Cache-Control': 'no-cache' }
+                });
+                
                 if (response.ok) {
                     const data = await response.json();
                     if (!data) return;
@@ -846,6 +851,9 @@
                 });
                 if(response.ok) {
                     console.log("Cloud Database updated successfully!");
+                } else {
+                    // 🔴 ADDED ALERT TO WARN YOU ABOUT FIREBASE RULES 
+                    alert("🔴 Failed to push to Cloud Database! Please make sure your Firebase Rules are set to true for read and write.");
                 }
             } catch (err) {
                 console.warn("Could not push to cloud DB:", err);
