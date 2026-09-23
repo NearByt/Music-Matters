@@ -15,12 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
     <script>
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        };
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+        window.onload = function() { window.scrollTo(0, 0); };
     </script>
 
     <style>
@@ -39,8 +35,7 @@
         html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
         body {
             background-color: var(--bg-dark); color: var(--text-main);
-            font-family: 'Poppins', sans-serif; line-height: 1.8; overflow-x: hidden;
-            width: 100%;
+            font-family: 'Poppins', sans-serif; line-height: 1.8; overflow-x: hidden; width: 100%;
         }
         h1, h2, h3, h4, .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; }
         a { text-decoration: none; color: inherit; cursor: pointer; }
@@ -60,13 +55,11 @@
             90% { opacity: 1; }
             100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
-        .note-1 { left: 10%; animation-duration: 12s; animation-delay: 0s; font-size: 2.5rem; }
+        .note-1 { left: 10%; animation-duration: 12s; font-size: 2.5rem; }
         .note-2 { left: 25%; animation-duration: 18s; animation-delay: 2s; font-size: 3.5rem; }
         .note-3 { left: 40%; animation-duration: 15s; animation-delay: 5s; }
         .note-4 { left: 60%; animation-duration: 20s; animation-delay: 1s; font-size: 3rem; }
         .note-5 { left: 75%; animation-duration: 14s; animation-delay: 4s; }
-        .note-6 { left: 85%; animation-duration: 17s; animation-delay: 3s; font-size: 2rem; }
-        .note-7 { left: 50%; animation-duration: 22s; animation-delay: 7s; font-size: 4rem; }
 
         /* ----- NAVIGATION ----- */
         nav {
@@ -102,12 +95,10 @@
         
         .btn-tarang-hero-new {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 16px 35px; 
-            background: linear-gradient(135deg, #d4af37, #f1db8b, #d4af37); background-size: 200% 200%;
+            padding: 16px 35px; background: linear-gradient(135deg, #d4af37, #f1db8b, #d4af37); background-size: 200% 200%;
             color: #000; font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; 
             letter-spacing: 1.5px; border-radius: 50px; transition: all 0.4s ease; border: none; cursor: pointer; 
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); 
-            animation: gradientShift 3s ease infinite, pulseGlowNav 2s infinite;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); animation: gradientShift 3s ease infinite, pulseGlowNav 2s infinite;
         }
         .btn-tarang-hero-new:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 15px 40px rgba(255,255,255,0.4); background: #fff; color: #000;}
         @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -116,8 +107,6 @@
         .hero-img { position: absolute; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.9); transition: all 0.5s ease; object-fit: cover; }
         .img-back { width: 75%; height: 380px; top: 0; right: 0; border: 1px solid rgba(255,255,255,0.05); filter: grayscale(30%); }
         .img-front { width: 70%; height: 320px; bottom: 0; left: 0; border: 3px solid var(--accent-gold); }
-        .hero-images-container:hover .img-back { transform: translate(10px, -10px) rotate(2deg); filter: grayscale(0%); }
-        .hero-images-container:hover .img-front { transform: translate(-10px, 10px) rotate(-2deg); }
 
         /* ----- GENERAL SECTIONS ----- */
         section { padding: 80px 8%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; width: 100%; }
@@ -145,7 +134,7 @@
         .about-card p { margin-bottom: 15px; font-size: clamp(0.95rem, 1.8vw, 1.1rem); color: var(--text-muted); text-align: justify; line-height: 1.8; }
         .curriculum-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .curriculum-card { background-color: rgba(21, 23, 30, 0.85); padding: 35px 20px; border-radius: 15px; text-align: center; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(5px); }
-        .curriculum-card:hover { transform: translateY(-10px); background-color: var(--bg-lighter); box-shadow: var(--glow-shadow); border-color: var(--accent-gold); }
+        .curriculum-card:hover { transform: translateY(-10px); background-color: var(--bg-lighter); border-color: var(--accent-gold); }
         .curriculum-card i { font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px; }
         .curriculum-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
         .curriculum-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
@@ -161,7 +150,6 @@
         .phone-highlight { color: #fff; font-weight: 700; font-size: 1.15rem; letter-spacing: 1px; }
         .map-card { background-color: rgba(255,255,255,0.03); border-radius: 18px; padding: 35px 25px; text-align: center; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
         .map-icon { font-size: 3.5rem; color: var(--accent-gold); margin-bottom: 15px; animation: pulseGlow 2s infinite; }
-        @keyframes pulseGlow { 0% { text-shadow: 0 0 0 rgba(212, 175, 55, 0.4); transform: scale(1); } 50% { text-shadow: 0 0 30px rgba(212, 175, 55, 1); transform: scale(1.06); } 100% { text-shadow: 0 0 0 rgba(212, 175, 55, 0.4); transform: scale(1); } }
         .btn-map { display: inline-block; margin-top: 18px; padding: 12px 30px; background-color: var(--accent-gold); color: #000; font-weight: 700; border-radius: 30px; font-size: 1rem; transition: all 0.3s ease; }
         .btn-map:hover { background-color: #fff; transform: translateY(-3px); }
 
@@ -183,15 +171,26 @@
            TARANG 2026 & ROBUST MOBILE STYLES
            ========================================= */
         .tarang-hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 10px;
+            text-align: center; max-width: 900px; margin: 0 auto; width: 100%; padding: 0 10px; position: relative;
         }
+
+        /* ----- BACK BUTTON ----- */
+        .back-btn-container { position: absolute; top: 0; left: 10px; z-index: 10; }
+        .back-btn { 
+            background: transparent; color: var(--accent-gold); border: 1px solid rgba(212, 175, 55, 0.5); 
+            padding: 8px 20px; border-radius: 30px; font-family: 'Poppins', sans-serif; font-weight: 600; 
+            cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;
+            backdrop-filter: blur(5px);
+        }
+        .back-btn:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
 
         .glow-title { text-shadow: 0 0 25px rgba(212, 175, 55, 0.5); }
         
+        .whatsapp-highlight {
+            color: var(--accent-gold); font-weight: 700; font-size: 1.1rem;
+            margin-bottom: 12px; letter-spacing: 0.5px; text-shadow: 0 0 10px rgba(212,175,55,0.3);
+        }
+
         .whatsapp-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
             background: #25D366; color: #fff; padding: 14px 30px; border-radius: 50px;
@@ -201,107 +200,93 @@
         }
         .whatsapp-btn:hover { background: #1ebe57; transform: translateY(-3px); box-shadow: 0 0 30px rgba(37, 211, 102, 0.6); color: #fff; }
 
+        /* ----- FORCE-HORIZONTAL GLOWING COUNTDOWN TIMER ----- */
+        .countdown-line {
+            display: flex !important; flex-direction: row !important; justify-content: center !important; 
+            align-items: baseline !important; flex-wrap: nowrap !important;
+            width: 100%; max-width: 100%; margin: 15px auto 25px auto; padding: 0;
+            gap: clamp(6px, 2vw, 20px); font-family: 'Montserrat', sans-serif; font-weight: 900;
+            color: #fff; text-shadow: 0 0 15px rgba(212,175,55,0.6); letter-spacing: 1px;
+            white-space: nowrap !important; overflow: hidden; text-align: center;
+        }
+        .cd-unit { 
+            display: inline-flex !important; flex-direction: row !important; align-items: baseline !important; 
+            gap: clamp(3px, 1vw, 8px); white-space: nowrap !important; 
+        }
+        .cd-unit span:first-child { font-size: clamp(1rem, 3.8vw, 2.2rem); }
+        .cd-lbl { 
+            font-size: clamp(0.5rem, 1.5vw, 1rem); color: var(--accent-gold); 
+            text-transform: uppercase; font-weight: 700; text-shadow: none; letter-spacing: 0.5px;
+        }
+
         /* Admin Controls Bar */
         #admin-controls-bar {
-            display: none;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--accent-gold);
-            padding: 16px;
-            border-radius: 12px;
-            margin: 25px auto;
-            max-width: 700px;
-            width: 100%;
-            text-align: center;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: none; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent-gold);
+            padding: 16px; border-radius: 12px; margin: 25px auto; max-width: 750px; width: 100%;
+            text-align: center; gap: 12px; justify-content: center; flex-wrap: wrap;
         }
+
+        /* Admin Action buttons inside headers */
+        .admin-inline-btn {
+            display: none; align-items: center; justify-content: center;
+            background: rgba(212,175,55,0.15); border: 1px solid var(--accent-gold);
+            color: var(--accent-gold); width: 35px; height: 35px; border-radius: 50%;
+            cursor: pointer; transition: 0.3s; font-size: 1rem; margin-left: auto;
+        }
+        .admin-inline-btn:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 15px rgba(212,175,55,0.5); }
 
         /* Distinct Instrument Boxes */
         .instrument-box {
-            background: rgba(17, 19, 25, 0.7);
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            width: 100%;
-            overflow: hidden;
+            background: rgba(17, 19, 25, 0.7); border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px; padding: 40px 30px; margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(10px); width: 100%; overflow: hidden;
         }
 
         /* Global performance box */
-        .global-media-box {
-            border-color: #ff4d4d;
-            background: linear-gradient(180deg, rgba(17, 19, 25, 0.7), rgba(40, 15, 15, 0.8));
-        }
+        .global-media-box { border-color: #ff4d4d; background: linear-gradient(180deg, rgba(17, 19, 25, 0.7), rgba(40, 15, 15, 0.8)); }
 
         .instrument-title { 
-            font-size: clamp(1.5rem, 4.5vw, 2.8rem); 
-            color: #fff; 
-            font-weight: 900; 
-            margin-bottom: 30px; 
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3); 
-            padding-bottom: 15px; 
-            text-shadow: 0 0 15px rgba(212,175,55,0.4); 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            font-family: 'Montserrat', sans-serif; 
-            text-transform: uppercase;
-            word-break: break-word;
-            flex-wrap: wrap;
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem); color: #fff; font-weight: 900; 
+            margin-bottom: 30px; border-bottom: 2px solid rgba(212, 175, 55, 0.3); 
+            padding-bottom: 15px; text-shadow: 0 0 15px rgba(212,175,55,0.4); 
+            display: flex; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; 
+            text-transform: uppercase; word-break: break-word; flex-wrap: wrap; width: 100%;
         }
         
-        /* Distinct Class Sub-Boxes */
-        .class-group { 
-            margin-bottom: 30px; 
-            background: rgba(0,0,0,0.4); 
-            padding: 25px 20px; 
-            border-radius: 16px; 
-            border: 1px solid rgba(255,255,255,0.08); 
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5); 
-            width: 100%;
-        }
-        .class-group-title { 
-            font-size: clamp(1.15rem, 3vw, 1.4rem); 
-            color: var(--accent-gold); 
-            margin-bottom: 20px; 
-            border-bottom: 1px dashed rgba(255,255,255,0.2); 
-            padding-bottom: 8px; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            font-family: 'Montserrat', sans-serif; 
-            opacity: 0.9; 
-            letter-spacing: 1px; 
-            font-weight: 700;
-            word-break: break-word;
-        }
-        
+        /* NEW COMPACT GRID UI FOR PARTICIPANTS */
         .participants-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 18px; 
-            width: 100%;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; width: 100%;
         }
         
         .participant-card { 
             background: linear-gradient(145deg, rgba(30, 33, 43, 0.9), rgba(21, 23, 30, 0.9)); 
-            padding: 22px 18px; 
-            border-radius: 12px; 
-            border-left: 4px solid var(--accent-gold); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-            transition: transform 0.3s; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between;
-            width: 100%;
-            word-break: break-word;
+            padding: 16px 20px; border-radius: 12px; border-left: 4px solid var(--accent-gold); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); transition: transform 0.3s; 
+            display: flex; flex-direction: column; gap: 12px; width: 100%;
         }
         .participant-card:hover { transform: translateY(-4px); box-shadow: var(--glow-shadow); border-left-color: #fff;}
-        .participant-name { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: bold; color: var(--text-main); margin-bottom: 5px; font-family: 'Montserrat', sans-serif; word-break: break-word;}
+        .pc-main-row { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 10px; flex-wrap: wrap;}
+        .pc-info-col { display: flex; flex-direction: column; gap: 2px;}
+        .participant-name { font-size: clamp(1.1rem, 3vw, 1.35rem); font-weight: bold; color: var(--text-main); font-family: 'Montserrat', sans-serif; word-break: break-word; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;}
+        .pc-class-pill { background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.4); color: var(--accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap;}
         
+        /* SYMBOL BADGES */
+        .badge-container { display: inline-flex; gap: 10px; align-items: center; }
+        .badge-crown { color: #111; -webkit-text-stroke: 1.5px #d4af37; filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.9)); cursor: pointer; transition: 0.3s;}
+        .badge-star { color: #FFD700; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8)); cursor: pointer; transition: 0.3s;}
+        .badge-gear { color: #A0A4B0; filter: drop-shadow(0 0 5px rgba(160, 164, 176, 0.6)); cursor: pointer; transition: 0.3s;}
+        .badge-crown:hover, .badge-star:hover, .badge-gear:hover { transform: scale(1.2); }
+
+        /* TOAST NOTIFICATION */
+        .badge-toast {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-20px);
+            background: linear-gradient(45deg, #d4af37, #f1db8b); color: #000; padding: 12px 25px; border-radius: 30px;
+            font-weight: 800; font-family: 'Montserrat', sans-serif; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+            z-index: 9999; opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+        }
+        .badge-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
         .performance-list-item {
             display: flex; align-items: center; justify-content: space-between; gap: 10px;
             background: rgba(255, 0, 0, 0.1); padding: 14px 18px;
@@ -324,7 +309,7 @@
         /* Modals */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(10px); padding: 15px;}
         .modal-content { background-color: var(--bg-card); margin: 5% auto; padding: 35px 25px; border: 2px solid var(--accent-gold); border-radius: 18px; width: 100%; max-width: 600px; color: white; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.9); max-height: 90vh; overflow-y: auto;}
-        .close-modal { color: var(--text-muted); position: absolute; right: 20px; top: 15px; font-size: 26px; font-weight: bold; cursor: pointer; transition: 0.3s;}
+        .close-modal { color: var(--text-muted); position: absolute; right: 20px; top: 15px; font-size: 26px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 50;}
         .close-modal:hover { color: var(--accent-gold); }
         
         /* Admin Form */
@@ -336,7 +321,7 @@
         .file-upload-label:hover { background: rgba(212, 175, 55, 0.15); }
         #g-audio-files { display: none; }
 
-        .admin-action-btns { display: flex; gap: 8px; margin-top: 15px; }
+        .admin-action-btns { display: flex; gap: 8px; margin-top: 5px; }
         .admin-btn { padding: 8px 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-family: 'Poppins', sans-serif; font-size: 0.85rem; transition: 0.3s; flex: 1;}
         .btn-edit { background: var(--accent-gold); color: black; }
         .btn-edit:hover { background: #fff; }
@@ -345,19 +330,26 @@
 
         .editable-active { border: 1px dashed #d4af37 !important; padding: 4px; border-radius: 4px; transition: 0.3s; background: rgba(212, 175, 55, 0.05); }
         .editable-active:hover { background: rgba(212, 175, 55, 0.15); cursor: text; }
-        .editable-active:empty:before { content: "Click to add text"; color: rgba(255,255,255,0.3); }
         
         .pdf-hide { display: block; }
         
         .tarang-footer { text-align: center; padding: 45px 15px; background: #050505; border-top: 1px solid rgba(212,175,55,0.3); margin-top: 40px; box-shadow: 0 -10px 30px rgba(0,0,0,0.5);}
         .tarang-footer h3 { color: var(--accent-gold); font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 8px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1.5px;}
         .tarang-footer p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;}
+        
+        .footer-buttons-wrapper { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;}
         .tarang-footer-admin { display: inline-flex; align-items: center; gap: 8px; color: #fff; background: rgba(255,255,255,0.05); font-size: 0.9rem; cursor: pointer; transition: 0.3s; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; font-weight: 600;}
         .tarang-footer-admin:hover { color: #000; border-color: var(--accent-gold); background: var(--accent-gold); }
+        .version-tag { font-size: 0.8rem; color: #555; letter-spacing: 1px; font-family: monospace; }
 
-        /* =========================================
-           RESPONSIVE MEDIA QUERIES (PERFECT MOBILE FIT)
-           ========================================= */
+        /* Logs List */
+        .logs-list { max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-top: 15px;}
+        .log-item { font-size: 0.85rem; color: var(--text-main); margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; word-break: break-word;}
+        .log-time { color: var(--accent-gold); font-weight: bold; margin-right: 5px;}
+
+        /* Admin List UI */
+        .admin-list-item { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); padding: 10px 15px; border-radius: 8px; margin-bottom: 8px;}
+
         @media (max-width: 992px) {
             .hero-content, .contact-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
             .hero-images-container { margin-top: 15px; }
@@ -376,24 +368,27 @@
             .img-back { width: 80%; height: 210px; }
             .img-front { width: 75%; height: 180px; }
 
+            .back-btn-container { top: 15px; left: 15px; }
+            .back-btn { padding: 6px 14px; font-size: 0.85rem; }
+
             /* Tarang Hero scaling */
-            #edit-t-title { font-size: clamp(2.3rem, 8.5vw, 3.5rem) !important; }
+            #edit-t-title { font-size: clamp(2.3rem, 8.5vw, 3.5rem) !important; margin-top: 25px; }
             #edit-t-sub { font-size: 1.15rem !important; }
             #edit-t-date { font-size: 1rem !important; }
             #edit-t-desc { font-size: 0.95rem !important; line-height: 1.7; }
 
-            /* Instrument and Group boxes */
+            /* Forced overrides to guarantee single line timer */
+            .countdown-line { gap: 8px !important; }
+            .cd-lbl { font-size: 0.65rem !important; }
+
+            /* Instrument boxes */
             .instrument-box { padding: 22px 14px; border-radius: 16px; margin-bottom: 25px; }
-            .instrument-title { font-size: 1.45rem; gap: 8px; margin-bottom: 20px; padding-bottom: 12px; }
-            .class-group { padding: 16px 12px; border-radius: 12px; margin-bottom: 20px; }
-            .class-group-title { font-size: 1.1rem; margin-bottom: 15px; }
+            .instrument-title { font-size: 1.35rem; gap: 8px; margin-bottom: 20px; padding-bottom: 12px; }
 
             /* Grid columns on mobile */
             .participants-grid { grid-template-columns: 1fr; gap: 12px; }
             .participant-card { padding: 16px 14px; border-radius: 10px; }
-            .participant-name { font-size: 1.25rem; }
 
-            /* Performances & audios */
             .performance-list-item { padding: 12px 14px; font-size: 0.9rem; }
             .audio-bar { padding: 14px 12px; }
 
@@ -408,13 +403,21 @@
         @media (max-width: 480px) {
             section { padding: 35px 10px; }
             .instrument-box { padding: 18px 10px; border-radius: 14px; }
-            .instrument-title { font-size: 1.3rem; }
-            .class-group { padding: 14px 8px; }
-            .participant-name { font-size: 1.15rem; }
+            .instrument-title { font-size: 1.15rem; }
+            .footer-buttons-wrapper { flex-direction: column; }
+            .tarang-footer-admin { width: 100%; justify-content: center;}
+            .pc-main-row { flex-direction: column; align-items: flex-start;}
+            
+            /* Extremely aggressive single line mobile fix */
+            .countdown-line { gap: 4px !important; }
+            .cd-lbl { font-size: 0.45rem !important; }
         }
     </style>
 </head>
 <body>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="badge-toast" class="badge-toast"><i class="fa-solid fa-info-circle"></i> <span id="badge-toast-msg"></span></div>
 
     <div class="site-background"></div>
     <div class="floating-notes-container">
@@ -452,7 +455,6 @@
                     <p>"Where Passion Meets Precision." Simon Joseph is the driving force behind the renowned band <strong>Music Matters</strong> and a highly respected instructor at <strong>Accord School</strong>.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <button onclick="document.getElementById('community').scrollIntoView();" class="btn-primary">Join Community</button>
-                        
                         <button onclick="togglePage('tarang')" class="btn-tarang-hero-new">
                             🎉 Tarang 2026 🎸 <i class="fa-solid fa-arrow-right"></i>
                         </button>
@@ -593,33 +595,58 @@
         <!-- Tarang Info Section -->
         <section class="hero" style="min-height: auto; padding-top: 120px; padding-bottom: 20px;">
             <div class="tarang-hero-content">
+                
+                <div class="back-btn-container pdf-hide">
+                    <button onclick="togglePage('main')" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                </div>
+
                 <h1 id="edit-t-title" class="editable-text glow-title" style="font-weight: 900; background: linear-gradient(45deg, #ffffff, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; line-height: 1.15;">TARANG 2026</h1>
                 <h2 id="edit-t-sub" class="editable-text" style="color: var(--accent-gold); margin-bottom: 12px; margin-top: 12px; text-transform: uppercase;">Accord School Annual Day</h2>
+                
+                <!-- CLEAN INLINE GLOWING COUNTDOWN TIMER (HORIZONTAL ONLY) -->
+                <div class="countdown-line pdf-hide" id="countdown-timer">
+                    <div class="cd-unit"><span id="cd-months">00</span> <span class="cd-lbl">Months</span></div>
+                    <div class="cd-unit"><span id="cd-days">00</span> <span class="cd-lbl">Days</span></div>
+                    <div class="cd-unit"><span id="cd-hours">00</span> <span class="cd-lbl">Hours</span></div>
+                    <div class="cd-unit"><span id="cd-mins">00</span> <span class="cd-lbl">Mins</span></div>
+                    <div class="cd-unit"><span id="cd-secs">00</span> <span class="cd-lbl">Secs</span></div>
+                </div>
+
                 <p id="edit-t-date" class="editable-text slogan" style="color: var(--text-muted); margin-bottom: 20px;">December 23rd, 2026</p>
                 <div id="edit-t-desc" class="editable-text" style="color: var(--text-main); line-height: 1.8; margin-bottom: 25px;">
                     Welcome to the official music showcase for Tarang '26. Explore the incredible lineup of students performing on Guitar and Keyboard, guided by Sir Simon Joseph.
                 </div>
                 
                 <div style="margin-bottom: 30px;" class="pdf-hide">
+                    <p id="edit-t-wa-text" class="editable-text whatsapp-highlight">Join this new exclusive group for Tarang participants!</p>
                     <a href="https://chat.whatsapp.com/B5P6Gp5MLWQJIDkUc6KhDV" target="_blank" class="whatsapp-btn">
                         <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Music Matters - Tarang 2026
                     </a>
                 </div>
 
-                <!-- Admin Action Buttons -->
+                <!-- Admin/Owner Action Buttons -->
                 <div id="admin-controls-bar" class="pdf-hide">
-                    <p style="width: 100%; color: var(--accent-gold); margin-bottom: 8px; font-weight: bold; font-size: 1rem;"><i class="fa-solid fa-shield-halved"></i> Admin Mode Active</p>
+                    <p id="admin-role-display" style="width: 100%; color: var(--accent-gold); margin-bottom: 8px; font-weight: bold; font-size: 1rem;"><i class="fa-solid fa-shield-halved"></i> Admin Mode Active</p>
                     
-                    <button class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="document.getElementById('admin-dashboard-modal').style.display='block'">
+                    <button class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="openAddParticipantModal('guitar')">
                         <i class="fa-solid fa-user-plus"></i> Add Participant
                     </button>
                     
-                    <button class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem; background: #fff; color: #000;" onclick="openMediaModal()">
-                        <i class="fa-solid fa-music"></i> Manage Event Media
+                    <button id="btn-manage-media" class="btn-primary admin-only-owner" style="padding: 10px 20px; font-size: 0.85rem; background: #fff; color: #000;" onclick="openMediaModal()">
+                        <i class="fa-solid fa-music"></i> Manage Media
                     </button>
 
-                    <button onclick="logoutAdmin()" style="background: #dc3545; color: white; border: none; padding: 10px 20px; font-size: 0.85rem; border-radius: 50px; font-family: 'Poppins', sans-serif; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    <button id="btn-manage-admins" class="btn-primary admin-only-owner" style="padding: 10px 20px; font-size: 0.85rem; background: #3498db; color: #fff;" onclick="openAdminsModal()">
+                        <i class="fa-solid fa-users-gear"></i> Manage Admins
+                    </button>
+
+                    <button id="btn-view-logs" class="btn-primary admin-only-owner" style="padding: 10px 20px; font-size: 0.85rem; background: #9b59b6; color: #fff;" onclick="openLogsModal()">
+                        <i class="fa-solid fa-clipboard-list"></i> View Logs
+                    </button>
+
+                    <!-- EDITING MODE TOGGLE -->
+                    <button id="btn-edit-mode" class="btn-primary admin-only-owner" style="padding: 10px 20px; font-size: 0.85rem; background: #f39c12; color: #fff;" onclick="toggleEditingMode()">
+                        <i class="fa-solid fa-pen-to-square"></i> Editing Mode: OFF
                     </button>
                 </div>
             </div>
@@ -630,15 +657,35 @@
             
             <section id="tarang-guitar" style="padding-top: 0;">
                 <div class="instrument-box">
-                    <h3 class="instrument-title"><i class="fa-solid fa-guitar" style="color: var(--accent-gold);"></i> Guitar Performers</h3>
+                    <h3 class="instrument-title">
+                        <i class="fa-solid fa-guitar" style="color: var(--accent-gold);"></i> 
+                        <span id="edit-i-guitar" class="editable-text" style="flex:1">Guitar Performers</span>
+                        <button class="admin-inline-btn pdf-hide" onclick="openAddParticipantModal('guitar')" title="Add Guitarist"><i class="fa-solid fa-plus"></i></button>
+                    </h3>
                     <div id="guitar-classes-container"></div>
                 </div>
             </section>
 
             <section id="tarang-keyboard" style="padding-top: 0px;">
                 <div class="instrument-box">
-                    <h3 class="instrument-title"><i class="fa-solid fa-music" style="color: var(--accent-gold);"></i> Keyboard Performers</h3>
+                    <h3 class="instrument-title">
+                        <i class="fa-solid fa-music" style="color: var(--accent-gold);"></i> 
+                        <span id="edit-i-key" class="editable-text" style="flex:1">Keyboard Performers</span>
+                        <button class="admin-inline-btn pdf-hide" onclick="openAddParticipantModal('keyboard')" title="Add Keyboardist"><i class="fa-solid fa-plus"></i></button>
+                    </h3>
                     <div id="keyboard-classes-container"></div>
+                </div>
+            </section>
+
+            <!-- BACXTAGE MANAGERS SECTION -->
+            <section id="tarang-bacxtage" style="padding-top: 0px;">
+                <div class="instrument-box">
+                    <h3 class="instrument-title">
+                        <i class="fa-solid fa-headset" style="color: var(--accent-gold);"></i> 
+                        <span id="edit-i-bacxtage" class="editable-text" style="flex:1">BacXtage Managers</span>
+                        <button class="admin-inline-btn admin-only-owner pdf-hide" onclick="openAddParticipantModal('bacxtage')" title="Add Manager"><i class="fa-solid fa-plus"></i></button>
+                    </h3>
+                    <div id="bacxtage-classes-container"></div>
                 </div>
             </section>
 
@@ -647,7 +694,8 @@
                 <div class="instrument-box global-media-box">
                     
                     <h3 class="instrument-title" style="border-bottom-color: #ff4d4d; justify-content: center; text-align: center;">
-                        <i class="fa-brands fa-youtube" style="color: #ff4d4d;"></i> Performances
+                        <i class="fa-brands fa-youtube" style="color: #ff4d4d;"></i> 
+                        <span id="edit-m-perf" class="editable-text">Performances</span>
                     </h3>
 
                     <div id="global-perf-container" style="max-width: 800px; margin: 0 auto 30px auto; text-align: center;">
@@ -655,7 +703,8 @@
                     </div>
 
                     <h3 class="instrument-title" style="border-bottom-color: var(--accent-gold); justify-content: center; text-align: center; margin-top: 40px;">
-                        <i class="fa-solid fa-headphones-simple" style="color: var(--accent-gold);"></i> Sample Audios
+                        <i class="fa-solid fa-headphones-simple" style="color: var(--accent-gold);"></i> 
+                        <span id="edit-m-aud" class="editable-text">Sample Audios</span>
                     </h3>
 
                     <div id="global-audios-container" style="max-width: 800px; margin: 0 auto;">
@@ -676,9 +725,21 @@
         <footer class="tarang-footer">
             <h3>Tarang 2026 | Music Matters</h3>
             <p>Accord School Annual Event • Created by P. Charith Reddy</p>
-            <button class="tarang-footer-admin" onclick="document.getElementById('admin-login-modal').style.display='block'">
-                <i class="fa-solid fa-lock"></i> Admin Access
-            </button>
+            
+            <div class="footer-buttons-wrapper pdf-hide">
+                <button class="tarang-footer-admin" id="login-btn-admin" onclick="openLoginModal('admin')">
+                    <i class="fa-solid fa-user-shield"></i> Admin Access
+                </button>
+                <button class="tarang-footer-admin" id="login-btn-owner" onclick="openLoginModal('owner')">
+                    <i class="fa-solid fa-key"></i> Owner Access
+                </button>
+                <!-- BOTTOM LOGOUT BUTTON -->
+                <button class="tarang-footer-admin" id="logout-btn-footer" style="display: none; background: #dc3545; border-color: #dc3545;" onclick="logoutAdmin()">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+
+            <p class="version-tag">v1.7.13</p>
         </footer>
     </div>
 
@@ -686,21 +747,21 @@
          ADMIN MODALS & JAVASCRIPT
          ========================================== -->
          
-    <!-- Admin Login Modal -->
+    <!-- Unified Login Modal -->
     <div id="admin-login-modal" class="modal">
         <div class="modal-content" style="max-width: 380px; text-align:center;">
             <span class="close-modal" onclick="document.getElementById('admin-login-modal').style.display='none'">&times;</span>
             <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
-            <h3 style="margin-bottom:15px; color:var(--accent-gold); font-family:'Montserrat', sans-serif;">Admin Access</h3>
+            <h3 id="login-modal-title" style="margin-bottom:15px; color:var(--accent-gold); font-family:'Montserrat', sans-serif;">Access Login</h3>
             <input type="password" id="admin-code-input" placeholder="Enter code" style="width:100%; padding:12px; margin-bottom:18px; text-align:center; letter-spacing:4px; font-size:1.1rem; background:#111; color:#fff; border:1px solid #333; border-radius:8px; outline:none;">
-            <button onclick="checkAdminCode()" class="btn-primary" style="width:100%; padding:14px; border-radius:8px;">Login securely</button>
+            <button onclick="submitAccessCode()" class="btn-primary" style="width:100%; padding:14px; border-radius:8px;">Login securely</button>
         </div>
     </div>
 
     <!-- Admin Dashboard Modal (Add / Edit Participant) -->
     <div id="admin-dashboard-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeAdminDashboard()">&times;</span>
+            <span class="close-modal" onclick="document.getElementById('admin-dashboard-modal').style.display='none'">&times;</span>
             <h3 style="margin-bottom:5px; color:var(--accent-gold); font-family:'Montserrat', sans-serif; font-size: 1.5rem;">Manage Participant</h3>
             <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Add or edit a student in the roster.</p>
             
@@ -727,18 +788,33 @@
 
                     <select id="p-section" style="flex: 1;">
                         <option value="" selected>No Section (Optional)</option>
+                        <option value="Allen">Allen</option>
+                        <option value="Atom">Atom</option>
                         <option value="Section A">Section A</option>
                         <option value="Section B">Section B</option>
                         <option value="Section C">Section C</option>
                         <option value="Section D">Section D</option>
+                        <option value="Section E">Section E</option>
+                        <option value="Section F">Section F</option>
+                        <option value="Section G">Section G</option>
+                        <option value="Section H">Section H</option>
                     </select>
                 </div>
                 
-                <label>Assigned Instrument</label>
+                <label>Assigned Role</label>
                 <select id="p-instrument">
-                    <option value="guitar">Guitar</option>
-                    <option value="keyboard">Keyboard</option>
+                    <!-- Options injected dynamically based on role -->
                 </select>
+
+                <!-- OWNER ONLY BADGE SELECTION -->
+                <div id="badge-selection-ui" style="display: none; margin-top: 15px;">
+                    <label style="color: var(--accent-gold);">Assign Symbols (Owner Only)</label>
+                    <div style="display: flex; gap: 15px; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap;">
+                        <label style="display: flex; align-items: center; gap: 5px; margin: 0; cursor: pointer;"><input type="checkbox" id="badge-crown" value="crown"> <i class="fa-solid fa-crown" style="color: #fff;"></i> Crown</label>
+                        <label style="display: flex; align-items: center; gap: 5px; margin: 0; cursor: pointer;"><input type="checkbox" id="badge-star" value="star"> <i class="fa-solid fa-star" style="color: #FFD700;"></i> Star</label>
+                        <label style="display: flex; align-items: center; gap: 5px; margin: 0; cursor: pointer;"><input type="checkbox" id="badge-gear" value="gear"> <i class="fa-solid fa-gear" style="color: #A0A4B0;"></i> Gear</label>
+                    </div>
+                </div>
                 
                 <button onclick="saveParticipant()" class="btn-primary" style="width:100%; margin-top:18px; padding:16px; border-radius:8px; font-size:1rem;" id="save-btn-text">Save Participant</button>
             </div>
@@ -771,12 +847,87 @@
         </div>
     </div>
 
+    <!-- OWNER: Manage Admins Modal -->
+    <div id="admin-management-modal" class="modal">
+        <div class="modal-content" style="text-align: left;">
+            <span class="close-modal" onclick="document.getElementById('admin-management-modal').style.display='none'">&times;</span>
+            <h3 style="margin-bottom:5px; color:#3498db; font-family:'Montserrat', sans-serif; font-size: 1.5rem;"><i class="fa-solid fa-users-gear"></i> Manage Admins</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Create and track access codes for your admins.</p>
+            
+            <div class="admin-form">
+                <label style="color: var(--accent-gold); font-size: 1rem;">Create New Admin</label>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+                    <input type="text" id="new-admin-name" placeholder="Admin Name" style="flex:1; min-width:120px;">
+                    <input type="text" id="new-admin-code" placeholder="Passcode" style="flex:1; min-width:100px;">
+                    <input type="number" id="new-admin-max" placeholder="Max Devices" value="1" min="1" style="flex:0.5; min-width:80px;">
+                </div>
+                <button onclick="saveNewAdmin()" class="btn-primary" style="width:100%; padding: 10px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 25px; background: #3498db; color:#fff;">+ Add New Admin</button>
+                
+                <label style="color: var(--text-main); font-size: 1rem;">Active Admin Codes</label>
+                <div id="active-admins-list" style="max-height: 200px; overflow-y: auto; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <!-- Injected Admins -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OWNER: Logs Modal -->
+    <div id="logs-modal" class="modal">
+        <div class="modal-content" style="text-align: left;">
+            <span class="close-modal" onclick="document.getElementById('logs-modal').style.display='none'">&times;</span>
+            <h3 style="margin-bottom:5px; color:#9b59b6; font-family:'Montserrat', sans-serif; font-size: 1.5rem;"><i class="fa-solid fa-clipboard-list"></i> Activity Logs</h3>
+            <p style="color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem;">View recent actions taken by Owner and Admins.</p>
+            
+            <div id="logs-container" class="logs-list">
+                <!-- Injected Logs -->
+            </div>
+        </div>
+    </div>
+
     <script>
         /* 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
            🔴🔴🔴 PASTE YOUR FIREBASE URL EXACTLY HERE 🔴🔴🔴🔴🔴🔴🔴
            🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴 */
         const GLOBAL_DATABASE_LINK = "https://music-matters-9b81f-default-rtdb.firebaseio.com/tarang.json"; 
         /* 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴 */
+
+        /* COUNTDOWN TIMER LOGIC */
+        function updateCountdown() {
+            const targetDate = new Date("Dec 23, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("cd-months").innerText = "00"; document.getElementById("cd-days").innerText = "00";
+                document.getElementById("cd-hours").innerText = "00"; document.getElementById("cd-mins").innerText = "00";
+                document.getElementById("cd-secs").innerText = "00";
+                return;
+            }
+
+            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("cd-months").innerText = String(months).padStart(2, '0');
+            document.getElementById("cd-days").innerText = String(days).padStart(2, '0');
+            document.getElementById("cd-hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("cd-mins").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("cd-secs").innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        /* TOAST NOTIFICATION LOGIC */
+        let toastTimeout;
+        function showBadgeToast(msg) {
+            const toast = document.getElementById('badge-toast');
+            document.getElementById('badge-toast-msg').innerText = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => { toast.classList.remove('show'); }, 3000);
+        }
 
         /* SPA PAGE TOGGLER */
         function togglePage(page) {
@@ -793,39 +944,35 @@
 
         /* DATA & RENDERING LOGIC */
         const defaultParticipants = [
-            { id: 1, name: "P. Charith Reddy", class: "Grade 10 Section C", instrument: "guitar" },
-            { id: 2, name: "Sahil", class: "Grade 10 Section C", instrument: "keyboard" }
+            { id: 1, name: "P. Charith Reddy", class: "Grade 10 Section C", instrument: "guitar", badges: ["crown"] },
+            { id: 2, name: "Sahil", class: "Grade 10 Section C", instrument: "keyboard", badges: ["star"] }
         ];
-
-        const defaultMedia = {
-            performances: [{ name: "Acoustic & Classical Symphony Medley", url: "https://youtube.com/" }],
-            audios: []
-        };
-
+        const defaultMedia = { performances: [{ name: "Acoustic & Classical Symphony Medley", url: "https://youtube.com/" }], audios: [] };
+        const defaultAdmins = [{ name: "Default Admin", code: "22077", maxDevices: 99, usedDevices: 0, id: Date.now() }];
+        
         let tarangData = JSON.parse(localStorage.getItem('tarang2026_participants')) || defaultParticipants;
         let tarangMedia = JSON.parse(localStorage.getItem('tarang2026_media')) || defaultMedia;
+        let tarangAdmins = JSON.parse(localStorage.getItem('tarang2026_admins')) || defaultAdmins;
+        let tarangLogs = JSON.parse(localStorage.getItem('tarang2026_logs')) || [];
+        let isEditingMode = false;
 
         async function fetchGlobalData() {
             if (!GLOBAL_DATABASE_LINK || !GLOBAL_DATABASE_LINK.startsWith('https://')) return;
             try {
-                // 🔴 ADDED CACHE-BUSTING SO PHONES DON'T USE OLD DATA
-                const response = await fetch(GLOBAL_DATABASE_LINK + "?_t=" + Date.now(), {
-                    method: 'GET',
-                    headers: { 'Cache-Control': 'no-cache' }
-                });
-                
+                const response = await fetch(GLOBAL_DATABASE_LINK + "?_t=" + Date.now(), { method: 'GET', headers: { 'Cache-Control': 'no-cache' }});
                 if (response.ok) {
                     const data = await response.json();
                     if (!data) return;
                     
-                    const remoteParticipants = data.participants || (data.record && data.record.participants);
-                    const remoteMedia = data.media || (data.record && data.record.media);
-
-                    if (remoteParticipants) tarangData = remoteParticipants;
-                    if (remoteMedia) tarangMedia = remoteMedia;
+                    if (data.participants) tarangData = data.participants;
+                    if (data.media) tarangMedia = data.media;
+                    if (data.admins) tarangAdmins = data.admins;
+                    if (data.logs) tarangLogs = data.logs;
 
                     localStorage.setItem('tarang2026_participants', JSON.stringify(tarangData));
                     localStorage.setItem('tarang2026_media', JSON.stringify(tarangMedia));
+                    localStorage.setItem('tarang2026_admins', JSON.stringify(tarangAdmins));
+                    localStorage.setItem('tarang2026_logs', JSON.stringify(tarangLogs));
                     renderParticipants();
                     renderGlobalMedia();
                 }
@@ -835,26 +982,13 @@
         }
 
         async function pushGlobalData() {
-            if (!GLOBAL_DATABASE_LINK) {
-                console.info("No cloud HTTPS endpoint provided. Stored locally.");
-                return;
-            }
-            if (!GLOBAL_DATABASE_LINK.startsWith('https://')) {
-                alert("Notice: Browser cannot push directly to a raw database protocol. Please provide an HTTPS REST API link (e.g. Firebase Realtime Database) to sync globally.");
-                return;
-            }
+            if (!GLOBAL_DATABASE_LINK) return;
             try {
-                const response = await fetch(GLOBAL_DATABASE_LINK, {
+                await fetch(GLOBAL_DATABASE_LINK, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ participants: tarangData, media: tarangMedia })
+                    body: JSON.stringify({ participants: tarangData, media: tarangMedia, admins: tarangAdmins, logs: tarangLogs })
                 });
-                if(response.ok) {
-                    console.log("Cloud Database updated successfully!");
-                } else {
-                    // 🔴 ADDED ALERT TO WARN YOU ABOUT FIREBASE RULES 
-                    alert("🔴 Failed to push to Cloud Database! Please make sure your Firebase Rules are set to true for read and write.");
-                }
             } catch (err) {
                 console.warn("Could not push to cloud DB:", err);
             }
@@ -863,67 +997,81 @@
         function saveDataGlobally() {
             localStorage.setItem('tarang2026_participants', JSON.stringify(tarangData));
             localStorage.setItem('tarang2026_media', JSON.stringify(tarangMedia));
-            
+            localStorage.setItem('tarang2026_admins', JSON.stringify(tarangAdmins));
+            localStorage.setItem('tarang2026_logs', JSON.stringify(tarangLogs));
             renderParticipants();
             renderGlobalMedia();
             pushGlobalData();
         }
 
+        function logAction(actionStr) {
+            const time = new Date().toLocaleString();
+            const user = sessionStorage.getItem('userName') || 'System';
+            tarangLogs.unshift(`[${time}] ${user}: ${actionStr}`);
+            if(tarangLogs.length > 50) tarangLogs.pop(); 
+            saveDataGlobally();
+        }
+
         function renderParticipants() {
             const guitarContainer = document.getElementById('guitar-classes-container');
             const keyboardContainer = document.getElementById('keyboard-classes-container');
+            const bacxtageContainer = document.getElementById('bacxtage-classes-container');
             
-            guitarContainer.innerHTML = '';
-            keyboardContainer.innerHTML = '';
+            guitarContainer.innerHTML = ''; keyboardContainer.innerHTML = ''; bacxtageContainer.innerHTML = '';
 
-            const isAdmin = sessionStorage.getItem('isAdminLogged') === 'true';
+            const userRole = sessionStorage.getItem('userRole');
+            const isOwner = userRole === 'owner';
+            const isAdmin = userRole === 'admin';
 
             const guitars = tarangData.filter(p => p.instrument === 'guitar');
             const keyboards = tarangData.filter(p => p.instrument === 'keyboard');
+            const bacxtage = tarangData.filter(p => p.instrument === 'bacxtage');
 
-            function renderInstrumentGroups(dataArray, container) {
+            function renderInstrumentGrid(dataArray, container) {
                 if(dataArray.length === 0) {
-                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 1rem; font-style: italic;">No participants assigned to this instrument yet.</p>';
+                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 1rem; font-style: italic;">No members assigned to this category yet.</p>';
                     return;
                 }
 
-                const classes = [...new Set(dataArray.map(item => item.class))].sort();
+                const sortedData = [...dataArray].sort((a, b) => a.class.localeCompare(b.class));
+                let gridHTML = `<div class="participants-grid">`;
 
-                classes.forEach(cls => {
-                    let groupHTML = `
-                        <div class="class-group">
-                            <h4 class="class-group-title"><i class="fa-solid fa-users-rectangle"></i> ${cls}</h4>
-                            <div class="participants-grid">
-                    `;
+                sortedData.forEach(p => {
+                    let canEdit = isOwner || (isAdmin && (p.instrument === 'guitar' || p.instrument === 'keyboard'));
+                    const adminControls = canEdit 
+                        ? `<div class="admin-action-btns pdf-hide">
+                               <button class="admin-btn btn-edit" onclick="editParticipant(${p.id})"><i class="fa-solid fa-pen"></i> Edit</button>
+                               <button class="admin-btn btn-delete" onclick="deleteParticipant(${p.id})"><i class="fa-solid fa-trash"></i> Drop</button>
+                           </div>` 
+                        : '';
 
-                    const studentsInClass = dataArray.filter(p => p.class === cls);
-                    
-                    studentsInClass.forEach(p => {
-                        const adminControls = isAdmin 
-                            ? `<div class="admin-action-btns pdf-hide">
-                                   <button class="admin-btn btn-edit" onclick="editParticipant(${p.id})"><i class="fa-solid fa-pen"></i> Edit</button>
-                                   <button class="admin-btn btn-delete" onclick="deleteParticipant(${p.id})"><i class="fa-solid fa-trash"></i> Drop</button>
-                               </div>` 
-                            : '';
+                    let badgesHTML = '<div class="badge-container">';
+                    if(p.badges && p.badges.includes('crown')) badgesHTML += `<i class="fa-solid fa-crown badge-crown" onclick="showBadgeToast('Website Owner')"></i>`;
+                    if(p.badges && p.badges.includes('star')) badgesHTML += `<i class="fa-solid fa-star badge-star" onclick="showBadgeToast('Pro Musician')"></i>`;
+                    if(p.badges && p.badges.includes('gear')) badgesHTML += `<i class="fa-solid fa-gear badge-gear fa-spin" onclick="showBadgeToast('BacXtage Managers')"></i>`;
+                    badgesHTML += '</div>';
 
-                        groupHTML += `
-                            <div class="participant-card">
-                                <div>
-                                    <div class="participant-name">${p.name}</div>
-                                    <div style="font-size: 0.9rem; color: var(--text-muted);"><i class="fa-solid fa-check"></i> Enrolled successfully</div>
+                    gridHTML += `
+                        <div class="participant-card">
+                            <div class="pc-main-row">
+                                <div class="pc-info-col">
+                                    <div class="participant-name">${p.name} ${badgesHTML}</div>
+                                    <div style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-check"></i> Enrolled</div>
                                 </div>
-                                ${adminControls}
+                                <div class="pc-class-pill">${p.class}</div>
                             </div>
-                        `;
-                    });
-
-                    groupHTML += `</div></div>`;
-                    container.innerHTML += groupHTML;
+                            ${adminControls}
+                        </div>
+                    `;
                 });
+
+                gridHTML += `</div>`;
+                container.innerHTML = gridHTML;
             }
 
-            renderInstrumentGroups(guitars, guitarContainer);
-            renderInstrumentGroups(keyboards, keyboardContainer);
+            renderInstrumentGrid(guitars, guitarContainer);
+            renderInstrumentGrid(keyboards, keyboardContainer);
+            renderInstrumentGrid(bacxtage, bacxtageContainer);
         }
 
         function renderGlobalMedia() {
@@ -979,6 +1127,29 @@
             });
         }
 
+        function openAddParticipantModal(defaultInst = 'guitar') {
+            resetParticipantForm();
+            const instSelect = document.getElementById('p-instrument');
+            const userRole = sessionStorage.getItem('userRole');
+            
+            if(userRole === 'admin') {
+                instSelect.innerHTML = `
+                    <option value="guitar">Guitar</option>
+                    <option value="keyboard">Keyboard</option>
+                `;
+                if(defaultInst !== 'bacxtage') instSelect.value = defaultInst;
+            } else if (userRole === 'owner') {
+                instSelect.innerHTML = `
+                    <option value="guitar">Guitar</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="bacxtage">BacXtage Managers</option>
+                `;
+                instSelect.value = defaultInst;
+            }
+
+            document.getElementById('admin-dashboard-modal').style.display = 'block';
+        }
+
         function saveParticipant() {
             const idField = document.getElementById('p-id').value;
             const name = document.getElementById('p-name').value.trim();
@@ -987,24 +1158,35 @@
             const cls = section ? grade + " " + section : grade;
             const instrument = document.getElementById('p-instrument').value;
 
-            if(!name || !grade) {
-                alert('Please provide Name and Grade.');
-                return;
+            if(!name || !grade) { alert('Please provide Name and Grade.'); return; }
+
+            let badges = [];
+            const userRole = sessionStorage.getItem('userRole');
+
+            if (userRole === 'owner') {
+                if (document.getElementById('badge-crown').checked) badges.push('crown');
+                if (document.getElementById('badge-star').checked) badges.push('star');
+                if (document.getElementById('badge-gear').checked) badges.push('gear');
+            } else {
+                if (idField) {
+                    const existing = tarangData.find(x => x.id == idField);
+                    if (existing && existing.badges) badges = existing.badges;
+                }
             }
 
             if(idField) {
                 const index = tarangData.findIndex(x => x.id == idField);
                 if(index !== -1) {
-                    tarangData[index] = { id: parseInt(idField), name, class: cls, instrument };
+                    tarangData[index] = { id: parseInt(idField), name, class: cls, instrument, badges };
+                    logAction(`Updated participant: ${name}`);
                 }
             } else {
-                tarangData.push({ id: Date.now(), name, class: cls, instrument });
+                tarangData.push({ id: Date.now(), name, class: cls, instrument, badges });
+                logAction(`Added participant: ${name} to ${instrument}`);
             }
 
             saveDataGlobally();
-            resetParticipantForm();
-            alert('Participant Saved Successfully!');
-            closeAdminDashboard();
+            document.getElementById('admin-dashboard-modal').style.display = 'none';
         }
 
         function editParticipant(id) {
@@ -1018,22 +1200,40 @@
             let secVal = "";
             if(p.class.includes('Section')) {
                 const parts = p.class.split(' Section ');
-                gradeVal = parts[0].trim();
-                secVal = "Section " + parts[1].trim();
+                gradeVal = parts[0].trim(); secVal = "Section " + parts[1].trim();
+            } else if (p.class.includes('Allen')) {
+                const parts = p.class.split(' Allen');
+                gradeVal = parts[0].trim(); secVal = "Allen";
+            } else if (p.class.includes('Atom')) {
+                const parts = p.class.split(' Atom');
+                gradeVal = parts[0].trim(); secVal = "Atom";
             } else {
                 gradeVal = p.class.trim();
             }
             
             document.getElementById('p-grade').value = gradeVal;
             document.getElementById('p-section').value = secVal;
-            document.getElementById('p-instrument').value = p.instrument;
             
+            const instSelect = document.getElementById('p-instrument');
+            const userRole = sessionStorage.getItem('userRole');
+            if(userRole === 'admin') {
+                instSelect.innerHTML = `<option value="guitar">Guitar</option><option value="keyboard">Keyboard</option>`;
+            } else if (userRole === 'owner') {
+                instSelect.innerHTML = `<option value="guitar">Guitar</option><option value="keyboard">Keyboard</option><option value="bacxtage">BacXtage Managers</option>`;
+                document.getElementById('badge-crown').checked = p.badges && p.badges.includes('crown');
+                document.getElementById('badge-star').checked = p.badges && p.badges.includes('star');
+                document.getElementById('badge-gear').checked = p.badges && p.badges.includes('gear');
+            }
+
+            document.getElementById('p-instrument').value = p.instrument;
             document.getElementById('save-btn-text').innerText = "Update Participant";
             document.getElementById('admin-dashboard-modal').style.display = 'block';
         }
 
         function deleteParticipant(id) {
-            if(confirm('Are you sure you want to drop this participant?')) {
+            if(confirm('Are you sure you want to drop this member?')) {
+                const p = tarangData.find(x => x.id === id);
+                if(p) logAction(`Deleted participant: ${p.name}`);
                 tarangData = tarangData.filter(x => x.id !== id);
                 saveDataGlobally();
             }
@@ -1044,7 +1244,13 @@
             document.getElementById('p-name').value = '';
             document.getElementById('p-grade').value = 'Grade 10'; 
             document.getElementById('p-section').value = ''; 
-            document.getElementById('p-instrument').value = 'guitar';
+            
+            if (sessionStorage.getItem('userRole') === 'owner') {
+                document.getElementById('badge-crown').checked = false;
+                document.getElementById('badge-star').checked = false;
+                document.getElementById('badge-gear').checked = false;
+            }
+
             document.getElementById('save-btn-text').innerText = "Add Participant";
         }
 
@@ -1061,15 +1267,9 @@
         function addTempPerformance() {
             const name = document.getElementById('temp-perf-name').value.trim();
             const url = document.getElementById('temp-perf-url').value.trim();
-            
-            if(!name || !url) {
-                alert("Please enter both the Performance Title and URL.");
-                return;
-            }
-            
+            if(!name || !url) { alert("Please enter both the Performance Title and URL."); return; }
             editingPerformances.push({ name, url });
-            document.getElementById('temp-perf-name').value = '';
-            document.getElementById('temp-perf-url').value = '';
+            document.getElementById('temp-perf-name').value = ''; document.getElementById('temp-perf-url').value = '';
             renderAdminPerformanceList();
         }
 
@@ -1081,7 +1281,6 @@
         function renderAdminPerformanceList() {
             const list = document.getElementById('temp-perf-list');
             list.innerHTML = '';
-            
             editingPerformances.forEach((perf, index) => {
                 list.innerHTML += `
                     <li style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; align-items: center;">
@@ -1095,78 +1294,225 @@
         function updateGlobalFileCount() {
             const input = document.getElementById('g-audio-files');
             const text = document.getElementById('g-file-count-text');
-            if(input.files.length > 0) {
-                text.innerText = `${input.files.length} audio file(s) ready`;
-                text.style.color = "#fff";
-            } else {
-                text.innerText = "Click to Select Audio Files (.mp3, .wav)";
-                text.style.color = "var(--accent-gold)";
-            }
+            if(input.files.length > 0) { text.innerText = `${input.files.length} audio file(s) ready`; text.style.color = "#fff"; } 
+            else { text.innerText = "Click to Select Audio Files (.mp3, .wav)"; text.style.color = "var(--accent-gold)"; }
         }
 
         async function saveGlobalMedia() {
             const fileInput = document.getElementById('g-audio-files');
-
             for (let i = 0; i < fileInput.files.length; i++) {
                 if (fileInput.files[i].size > 2.5 * 1024 * 1024) {
-                    alert(`"${fileInput.files[i].name}" is larger than 2.5MB. Please upload audio clips under 2.5MB to ensure fast loading on mobile.`);
-                    return;
+                    alert(`"${fileInput.files[i].name}" is larger than 2.5MB. Please upload audio clips under 2.5MB.`); return;
                 }
             }
-
             try {
                 const newAudios = await processFiles(fileInput.files);
                 const finalAudios = newAudios.length > 0 ? newAudios : tarangMedia.audios;
-                
-                tarangMedia = { 
-                    performances: editingPerformances, 
-                    audios: finalAudios 
-                };
-                
+                tarangMedia = { performances: editingPerformances, audios: finalAudios };
+                logAction('Updated global media files');
                 saveDataGlobally();
-                alert('Global Event Media Saved!');
                 document.getElementById('admin-media-modal').style.display = 'none';
             } catch (error) {
-                alert('Storage limit reached. Please reduce file sizes.');
-                console.error(error);
+                alert('Storage limit reached. Please reduce file sizes.'); console.error(error);
             }
         }
 
-        /* AUTH & EDITABLE SYSTEM */
+        /* ADMIN MANAGEMENT (OWNER ONLY) */
+        function openAdminsModal() {
+            renderAdminList();
+            document.getElementById('admin-management-modal').style.display = 'block';
+        }
+
+        function renderAdminList() {
+            const list = document.getElementById('active-admins-list');
+            list.innerHTML = '';
+            if(tarangAdmins.length === 0) {
+                list.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; font-style:italic;">No admins created.</p>';
+                return;
+            }
+            tarangAdmins.forEach(adm => {
+                list.innerHTML += `
+                    <div class="admin-list-item">
+                        <div style="display:flex; flex-direction:column; gap:2px;">
+                            <span style="font-weight:bold; color:var(--text-main); font-size:0.95rem;">${adm.name}</span>
+                            <span style="font-size:0.75rem; color:var(--accent-gold);">Code: ${adm.code} | Devices: ${adm.usedDevices}/${adm.maxDevices}</span>
+                        </div>
+                        <button onclick="deleteAdmin(${adm.id})" style="background:none; border:none; color:#dc3545; font-size:1.1rem; cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+            });
+        }
+
+        function saveNewAdmin() {
+            const name = document.getElementById('new-admin-name').value.trim();
+            const code = document.getElementById('new-admin-code').value.trim();
+            const max = parseInt(document.getElementById('new-admin-max').value);
+            
+            if(!name || !code || !max) { alert("Please fill all fields."); return; }
+            if(tarangAdmins.find(a => a.code === code) || code === '010237') { alert("This code is already in use."); return; }
+            
+            tarangAdmins.push({ name, code, maxDevices: max, usedDevices: 0, id: Date.now() });
+            logAction(`Created new admin: ${name}`);
+            saveDataGlobally();
+            renderAdminList();
+            
+            document.getElementById('new-admin-name').value = '';
+            document.getElementById('new-admin-code').value = '';
+            document.getElementById('new-admin-max').value = '1';
+        }
+
+        function deleteAdmin(id) {
+            if(confirm('Revoke this admin access?')) {
+                const adm = tarangAdmins.find(a => a.id === id);
+                if(adm) logAction(`Revoked admin: ${adm.name}`);
+                tarangAdmins = tarangAdmins.filter(a => a.id !== id);
+                saveDataGlobally();
+                renderAdminList();
+            }
+        }
+
+        /* LOGS (OWNER ONLY) */
+        function openLogsModal() {
+            const list = document.getElementById('logs-container');
+            list.innerHTML = '';
+            if(tarangLogs.length === 0) {
+                list.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; font-style:italic;">No recent activity.</p>';
+            } else {
+                tarangLogs.forEach(log => {
+                    const parts = log.split('] ');
+                    if(parts.length > 1) {
+                        list.innerHTML += `<div class="log-item"><span class="log-time">${parts[0]}]</span> ${parts[1]}</div>`;
+                    } else {
+                        list.innerHTML += `<div class="log-item">${log}</div>`;
+                    }
+                });
+            }
+            document.getElementById('logs-modal').style.display = 'block';
+        }
+
+        /* RBAC & EDITABLE SYSTEM */
+        let attemptRole = '';
+
         window.addEventListener('load', function() {
-            sessionStorage.removeItem('isAdminLogged');
+            sessionStorage.removeItem('userRole'); sessionStorage.removeItem('userName');
             document.getElementById('admin-controls-bar').style.display = 'none';
+            document.getElementById('badge-selection-ui').style.display = 'none';
+            document.querySelectorAll('.admin-inline-btn').forEach(b => b.style.display = 'none');
+            
+            document.getElementById('login-btn-admin').style.display = 'inline-flex';
+            document.getElementById('login-btn-owner').style.display = 'inline-flex';
+            document.getElementById('logout-btn-footer').style.display = 'none';
+            
+            isEditingMode = false;
             removeEditableText();
         });
 
-        function checkAdminCode() {
+        function openLoginModal(role) {
+            attemptRole = role;
+            document.getElementById('login-modal-title').innerText = role === 'owner' ? "Owner Login" : "Admin Login";
+            document.getElementById('admin-login-modal').style.display = 'block';
+        }
+
+        function submitAccessCode() {
             const code = document.getElementById('admin-code-input').value;
-            if(code === '010237') {
-                sessionStorage.setItem('isAdminLogged', 'true');
-                document.getElementById('admin-code-input').value = '';
-                document.getElementById('admin-login-modal').style.display = 'none';
+            
+            if (attemptRole === 'owner' && code === '010237') {
+                sessionStorage.setItem('userRole', 'owner');
+                sessionStorage.setItem('userName', 'Website Owner');
+                logAction('Logged in successfully');
+                activateRoleUI('owner');
+            } else if (attemptRole === 'admin') {
+                const adminRecord = tarangAdmins.find(a => a.code === code);
+                if(adminRecord) {
+                    const deviceKey = 'device_auth_' + code;
+                    if(localStorage.getItem(deviceKey) !== 'true') {
+                        if(adminRecord.usedDevices >= adminRecord.maxDevices) {
+                            alert('Access Denied: Maximum devices have already been registered for this code.');
+                            return;
+                        }
+                        adminRecord.usedDevices++;
+                        localStorage.setItem(deviceKey, 'true');
+                        saveDataGlobally(); 
+                    }
+                    sessionStorage.setItem('userRole', 'admin');
+                    sessionStorage.setItem('userName', adminRecord.name);
+                    logAction('Logged in successfully');
+                    activateRoleUI('admin');
+                } else {
+                    alert('Access Denied: Invalid admin code.');
+                }
+            } else {
+                alert('Access Denied: Incorrect code for ' + attemptRole + ' access.');
+            }
+        }
+
+        function activateRoleUI(role) {
+            document.getElementById('admin-code-input').value = '';
+            document.getElementById('admin-login-modal').style.display = 'none';
+            document.getElementById('admin-controls-bar').style.display = 'flex';
+            
+            document.getElementById('login-btn-admin').style.display = 'none';
+            document.getElementById('login-btn-owner').style.display = 'none';
+            document.getElementById('logout-btn-footer').style.display = 'inline-flex';
+
+            if(role === 'owner') {
+                document.getElementById('admin-role-display').innerHTML = '<i class="fa-solid fa-crown"></i> Owner Mode Active';
+                document.querySelectorAll('.admin-only-owner').forEach(el => el.style.display = 'inline-block');
+                document.querySelectorAll('.admin-inline-btn').forEach(b => b.style.display = 'inline-flex');
+                document.getElementById('badge-selection-ui').style.display = 'block';
                 
-                document.getElementById('admin-controls-bar').style.display = 'flex';
-                renderParticipants();
+                isEditingMode = false;
+                const editBtn = document.getElementById('btn-edit-mode');
+                editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Editing Mode: OFF';
+                editBtn.style.background = '#f39c12';
+            } else {
+                document.getElementById('admin-role-display').innerHTML = `<i class="fa-solid fa-shield-halved"></i> Admin Mode Active (${sessionStorage.getItem('userName')})`;
+                document.querySelectorAll('.admin-only-owner').forEach(el => el.style.display = 'none');
+                
+                document.querySelectorAll('.admin-inline-btn').forEach(b => {
+                    if(!b.classList.contains('admin-only-owner')) { b.style.display = 'inline-flex'; }
+                });
+                
+                document.getElementById('badge-selection-ui').style.display = 'none';
+                isEditingMode = false;
+                removeEditableText();
+            }
+            renderParticipants();
+        }
+
+        function toggleEditingMode() {
+            isEditingMode = !isEditingMode;
+            const btn = document.getElementById('btn-edit-mode');
+            if(isEditingMode) {
+                btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Editing Mode: ON';
+                btn.style.background = '#2ecc71'; 
                 applyEditableText();
             } else {
-                alert('Access Denied: Incorrect code.');
+                btn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Editing Mode: OFF';
+                btn.style.background = '#f39c12'; 
+                removeEditableText();
             }
         }
 
         function logoutAdmin() {
-            sessionStorage.removeItem('isAdminLogged');
+            logAction('Logged out');
+            sessionStorage.removeItem('userRole'); sessionStorage.removeItem('userName');
             document.getElementById('admin-controls-bar').style.display = 'none';
-            closeAdminDashboard();
+            document.getElementById('badge-selection-ui').style.display = 'none';
+            document.querySelectorAll('.admin-inline-btn').forEach(b => b.style.display = 'none');
+            document.getElementById('admin-dashboard-modal').style.display = 'none'; 
             document.getElementById('admin-media-modal').style.display = 'none';
-            renderParticipants();
-            removeEditableText();
-            alert('Admin Logged Out Successfully.');
-        }
+            document.getElementById('admin-management-modal').style.display = 'none';
+            document.getElementById('logs-modal').style.display = 'none';
+            
+            document.getElementById('login-btn-admin').style.display = 'inline-flex';
+            document.getElementById('login-btn-owner').style.display = 'inline-flex';
+            document.getElementById('logout-btn-footer').style.display = 'none';
 
-        function closeAdminDashboard() {
-            document.getElementById('admin-dashboard-modal').style.display = 'none';
-            resetParticipantForm();
+            isEditingMode = false;
+            removeEditableText();
+            renderParticipants();
+            alert('Logged Out Successfully.');
         }
 
         function loadSavedTexts() {
@@ -1177,7 +1523,7 @@
         }
 
         function applyEditableText() {
-            if(sessionStorage.getItem('isAdminLogged') === 'true') {
+            if(sessionStorage.getItem('userRole') === 'owner') {
                 document.querySelectorAll('.editable-text').forEach(el => {
                     el.contentEditable = "true";
                     el.classList.add('editable-active');
@@ -1202,67 +1548,49 @@
             doc.setFillColor(212, 175, 55); 
             doc.rect(0, 0, 210, 8, 'F');
             
-            doc.setTextColor(30, 33, 43);
-            doc.setFontSize(24);
-            doc.setFont("helvetica", "bold");
+            doc.setTextColor(30, 33, 43); doc.setFontSize(24); doc.setFont("helvetica", "bold");
             doc.text("TARANG 2026", 105, 25, { align: 'center' });
             
-            doc.setTextColor(100, 100, 100);
-            doc.setFontSize(10);
-            doc.setFont("helvetica", "normal");
+            doc.setTextColor(100, 100, 100); doc.setFontSize(10); doc.setFont("helvetica", "normal");
             doc.text("Accord School Annual Day • Music Matters Community", 105, 32, { align: 'center' });
             
-            doc.setDrawColor(220, 220, 220);
-            doc.setLineWidth(0.5);
-            doc.line(20, 37, 190, 37);
-
+            doc.setDrawColor(220, 220, 220); doc.setLineWidth(0.5); doc.line(20, 37, 190, 37);
             let currentY = 44;
 
             if(tarangMedia.performances && tarangMedia.performances.length > 0) {
-                doc.setTextColor(50, 50, 50);
-                doc.setFontSize(11);
-                doc.setFont("helvetica", "bold");
-                doc.text("Event Performances:", 20, currentY);
-                currentY += 6;
-                
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(10);
+                doc.setTextColor(50, 50, 50); doc.setFontSize(11); doc.setFont("helvetica", "bold");
+                doc.text("Event Performances:", 20, currentY); currentY += 6;
+                doc.setFont("helvetica", "normal"); doc.setFontSize(10);
                 tarangMedia.performances.forEach((perf) => {
-                    doc.setTextColor(80, 80, 80);
-                    doc.text(`• ${perf.name}`, 25, currentY);
-                    currentY += 5.5;
+                    doc.setTextColor(80, 80, 80); doc.text(`• ${perf.name}`, 25, currentY); currentY += 5.5;
                 });
                 currentY += 4;
             }
 
             if(tarangData.length === 0) {
-                doc.setFontSize(12);
-                doc.setTextColor(120, 120, 120);
+                doc.setFontSize(12); doc.setTextColor(120, 120, 120);
                 doc.text("No participants registered yet.", 105, currentY + 15, { align: 'center' });
-                doc.save("Tarang_2026_Participants.pdf");
-                return;
+                doc.save("Tarang_2026_Participants.pdf"); return;
             }
 
             const sortedData = [...tarangData].sort((a, b) => a.class.localeCompare(b.class));
-            const tableRows = sortedData.map(p => [
-                p.name, 
-                p.class, 
-                p.instrument.charAt(0).toUpperCase() + p.instrument.slice(1)
-            ]);
+            const tableRows = sortedData.map(p => {
+                let instName = p.instrument === 'bacxtage' ? 'BacXtage Managers' : (p.instrument.charAt(0).toUpperCase() + p.instrument.slice(1));
+                let nameText = p.name;
+                if(p.badges) {
+                    if(p.badges.includes('crown')) nameText += " [Owner]";
+                    if(p.badges.includes('star')) nameText += " [Pro]";
+                }
+                return [nameText, p.class, instName];
+            });
 
             doc.autoTable({
-                startY: currentY,
-                head: [['Participant Name', 'Class / Grade', 'Instrument']],
-                body: tableRows,
-                theme: 'grid', 
+                startY: currentY, head: [['Participant Name', 'Class / Grade', 'Role/Instrument']], body: tableRows, theme: 'grid', 
                 headStyles: { fillColor: [30, 33, 43], textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 10, halign: 'left' },
-                bodyStyles: { textColor: [40, 40, 40], fontSize: 9 },
-                alternateRowStyles: { fillColor: [248, 249, 250] }, 
-                styles: { cellPadding: 5, lineColor: [220, 220, 220], lineWidth: 0.1 },
-                margin: { top: 20, left: 20, right: 20 },
+                bodyStyles: { textColor: [40, 40, 40], fontSize: 9 }, alternateRowStyles: { fillColor: [248, 249, 250] }, 
+                styles: { cellPadding: 5, lineColor: [220, 220, 220], lineWidth: 0.1 }, margin: { top: 20, left: 20, right: 20 },
                 didDrawPage: function(data) {
-                    doc.setFontSize(8);
-                    doc.setTextColor(150);
+                    doc.setFontSize(8); doc.setTextColor(150);
                     doc.text("Generated via Tarang Web Portal", 20, doc.internal.pageSize.height - 10);
                     doc.text("Page " + doc.internal.getNumberOfPages(), 190, doc.internal.pageSize.height - 10, { align: 'right' });
                 }
@@ -1272,10 +1600,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            fetchGlobalData();
-            renderParticipants();
-            renderGlobalMedia();
-            loadSavedTexts();
+            fetchGlobalData(); renderParticipants(); renderGlobalMedia(); loadSavedTexts();
         });
     </script>
 </body>
